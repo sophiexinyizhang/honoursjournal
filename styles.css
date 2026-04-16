@@ -319,6 +319,7 @@ nav {
 }
 
 .journal-entry.active {
+    margin-left: 2rem;
     font-weight: bold;
     font-size: 1.1em;
     color: #1e3a8a;
