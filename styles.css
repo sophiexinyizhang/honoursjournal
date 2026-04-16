@@ -104,7 +104,8 @@ h3 {
 }
 
 h4 {
-    font-size: 1.5417rem;
+    font-family: "Diatype Greek", monospace;
+    font-size: 1.4em;
     padding-top: 3vh;
 }
 
@@ -132,7 +133,7 @@ a:link {
 
 a:hover {
     font-weight: bold;
-    color:#2d1b69;
+    color: #2d1b69;
 }
 
 /*-------------------------------------------------------------------*/
@@ -274,7 +275,6 @@ nav {
     grid-column: span 8;
     height: calc(100vh - 3rem);
     overflow-y: auto;
-        cursor: pointer;
 }
 
 /*-------------------------------------------------------------------*/
@@ -303,15 +303,15 @@ nav {
 .journal-entry:hover {
     padding-left: 3rem;
     font-weight: bold;
-    font-size:1.2em;
+    font-size: 1.2em;
     cursor: pointer;
-    color:#1e3a8a;
+    color: #1e3a8a;
 }
 
 .journal-entry.active {
     font-weight: bold;
-    font-size:1.2em;
-    color:#1e3a8a;
+    font-size: 1.2em;
+    color: #1e3a8a;
 }
 
 .entry-date {
@@ -364,7 +364,7 @@ nav {
     padding: 0.5rem 1rem;
     cursor: default;
     color: #0e2657;
-    transition: color 2s ease;
+    /*transition: color 2s ease;*/
 }
 
 .anchor {
@@ -514,7 +514,7 @@ nav {
     #journal-list {
         width: 100%;
         height: auto;
-        overflow: hidden;
+        /*overflow: hidden;*/
         max-height: 100vh;
         transition: max-height 0.5s ease;
         grid-column: unset;

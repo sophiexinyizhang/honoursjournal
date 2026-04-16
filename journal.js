@@ -174,6 +174,9 @@ function buildJournalList() {
         entryEl.innerHTML = entryHTML;
         list.appendChild(entryEl);
     });
+    if (typeof updateTextColor === "function") {
+        updateTextColor();
+    }
 }
 
 function toggleJournalList() {
