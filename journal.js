@@ -118,11 +118,6 @@ const journalEntries = [
         title: "MAKING PUBLIC INFORMATION ACTUALLY ACCESSIBLE TO THE PUBLIC IS THE RESPONSIBILITY OF DESIGNERS",
         type: "anchor",
         href: "1makingpublicinfo.html"
-    },
-    {
-        date: ".",
-        title: "hi there u have reached the start !",
-        href: null
     }
 ];
 
