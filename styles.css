@@ -1,0 +1,571 @@
+/*import fonts Sohn & ABC Diatype Greek Mono */
+
+@font-face {
+    font-family: "Sohn";
+    src: url("fonts/test-soehne-buch.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sohn";
+    src: url("fonts/test-soehne-halbfett.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Diatype Greek";
+    src: url("fonts/ABCDiatypeGreekMono-Regular-Trial.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Diatype Greek";
+    src: url("fonts/ABCDiatypeGreekMono-Bold-Trial.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* GLOBAL RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+/* FIX FOR OLDER BROWSERS */
+header,
+nav,
+main,
+aside,
+article,
+section,
+footer,
+figure,
+figcaption {
+    display: block;
+}
+
+/* ALL IMAGES SHRINK TO FIT */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* BASIC TEXT STYLING */
+html {
+    background-color: #000000;
+    color: #0e2657;
+    font-size: 12px;
+    font-family: "Sohn", Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+p,
+li,
+td {
+    font-size: 1.4em;
+    padding: 0.8rem 0;
+    list-style: none;
+    font-weight: normal;
+}
+
+h1 {
+    font-family: "Sohn", Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    line-height: 5rem;
+    padding: 0.5vw 0;
+    text-align: left;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 2em;
+    padding: 1vw 0;
+}
+
+h3 {
+    font-family: "Diatype Greek", monospace;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 2rem 0;
+}
+
+h4 {
+    font-size: 1.5417rem;
+    padding-top: 3vh;
+}
+
+h5 {
+    font-family: "Diatype Greek", monospace;
+    font-size: 0.9em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+
+/* LINK STYLING */
+a:link {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    color:#2d1b69;
+}
+
+/*-------------------------------------------------------------------*/
+/*--------------------- SKY GRADIENT BACKGROUND ---------------------*/
+/*-------------------------------------------------------------------*/
+
+.sky {
+    position: fixed;
+    inset: 0;
+    animation: gradientShift 15s ease infinite;
+    background-size: 400% 400%;
+    z-index: -1;
+}
+
+.sky.night {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 25%, #2d1b69 50%, #0f0c29 75%, #1e1538 100%);
+    background-size: 400% 400%;
+}
+
+.sky.dawn {
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c2d12 25%, #ea580c 50%, #fb923c 75%, #fbbf24 100%);
+    background-size: 400% 400%;
+}
+
+.sky.morning {
+    background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 25%, #dbeafe 50%, #fef3c7 75%, #fde68a 100%);
+    background-size: 400% 400%;
+}
+
+.sky.midday {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 33%, #7dd3fc 66%, #bae6fd 100%);
+    background-size: 400% 400%;
+}
+
+.sky.afternoon {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 25%, #93c5fd 50%, #fbbf24 75%, #fde047 100%);
+    background-size: 400% 400%;
+}
+
+.sky.dusk {
+    background: linear-gradient(
+        135deg,
+        #7c2d12 0%,
+        #ea580c 16%,
+        #fb923c 32%,
+        #b64c00 48%,
+        #fbbf24 64%,
+        #ffb908 80%,
+        #b13586 100%
+    );
+    background-size: 400% 400%;
+}
+
+.sky.evening {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 25%, #2d1b69 50%, #0f0c29 75%, #1e1538 100%);
+    background-size: 400% 400%;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*-------------------------------------------------------------------*/
+/*--------------------------- NAV BAR -------------------------------*/
+/*-------------------------------------------------------------------*/
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2vh 1vw;
+    z-index: 19;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+}
+
+.nav-item {
+    grid-column: span 4;
+    text-align: left;
+    font-family: "Diatype Greek", monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #0e2657;
+    transition: color 2s ease;
+    white-space: nowrap;
+}
+
+.nav-rule {
+    border: none;
+    border-top: 1.2px solid #0e2657;
+    margin: 0.75rem 0 0 0;
+    transition: border-color 2s ease;
+}
+
+/*-------------------------------------------------------------------*/
+/*--------------------------- LAYOUT --------------------------------*/
+/*-------------------------------------------------------------------*/
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: clamp(40rem, 100vw, 140rem);
+    margin: 0 auto;
+    padding: 1vh 1vw;
+    margin-top: 3rem;
+    height: calc(100vh - 3rem);
+    align-items: start;
+    overflow: hidden;
+}
+
+/* LEFT PANEL */
+#journal-list {
+    grid-column: span 4;
+    height: calc(100vh - 3rem);
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+#journal-list-header {
+    display: none;
+}
+
+/* RIGHT PANEL */
+#journal-content {
+    grid-column: span 8;
+    height: calc(100vh - 3rem);
+    overflow-y: auto;
+        cursor: pointer;
+}
+
+/*-------------------------------------------------------------------*/
+/*----------------------- JOURNAL ENTRIES ---------------------------*/
+/*-------------------------------------------------------------------*/
+
+.journal-entry {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    padding: 1.2rem 0;
+    border-bottom: 1.2px solid #0e2657;
+    font-family: "Diatype Greek", monospace;
+    font-size: 1.05em;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #0e2657;
+    cursor: pointer;
+    margin-left: 0;
+    transition:
+        padding-left 0.7s ease-in-out,
+        color 1s ease,
+        font-size 0.5s ease;
+}
+
+.journal-entry:hover {
+    padding-left: 3rem;
+    font-weight: bold;
+    font-size:1.2em;
+    cursor: pointer;
+    color:#1e3a8a;
+}
+
+.journal-entry.active {
+    font-weight: bold;
+    font-size:1.2em;
+    color:#1e3a8a;
+}
+
+.entry-date {
+    grid-column: span 3;
+}
+.entry-title {
+    grid-column: span 8;
+}
+.entry-key {
+    grid-column: span 1;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.icon-sun {
+    width: 10px;
+    object-fit: contain;
+    vertical-align: middle;
+    flex-shrink: 0;
+    margin-right: 3px;
+    opacity: 0.8;
+}
+
+.icon-star {
+    width: 15px;
+    object-fit: contain;
+    vertical-align: middle;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/*-------------------------------------------------------------------*/
+/*----------------------- CONTENT KEY BUTTON ------------------------*/
+/*-------------------------------------------------------------------*/
+
+.content-key {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: normal;
+    padding-top: 2.5vh;
+}
+
+.content-type {
+    font-family: "Diatype Greek", monospace;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    cursor: default;
+    color: #0e2657;
+    transition: color 2s ease;
+}
+
+.anchor {
+    background-color: #f2da3f;
+    opacity: 0.8;
+}
+.project {
+    background-color: #c0d2f5;
+    opacity: 0.8;
+}
+
+.content-heading {
+    max-width: 70rem;
+    margin-right: auto;
+}
+
+.content-body {
+    margin-right: 10vw;
+    padding: 3.5vh 0 5vh 0;
+}
+
+/*-------------------------------------------------------------------*/
+/*------------- ANIMISTA CSS ANIMATIONS (kept, in use) --------------*/
+/*-------------------------------------------------------------------*/
+
+.focus-in-expand {
+    animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes focus-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.text-focus-in {
+    animation: text-focus-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) 5s both;
+}
+
+.text-focus-in-faster {
+    animation: text-focus-in 1.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink-1 1.2s ease-out infinite both;
+}
+
+@keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.flicker {
+    animation: flicker-3 2.5s linear infinite both;
+}
+
+@keyframes flicker-3 {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    34.02% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0;
+    }
+    35.92% {
+        opacity: 1;
+    }
+    39% {
+        opacity: 0;
+    }
+    39.82% {
+        opacity: 1;
+    }
+    84% {
+        opacity: 0;
+    }
+    84.92% {
+        opacity: 1;
+    }
+}
+
+.puff-out-center {
+    animation: puff-out-center 3s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+@keyframes puff-out-center {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        filter: blur(4px);
+        opacity: 0;
+    }
+}
+
+/*-------------------------------------------------------------------*/
+/*----------------------- MEDIA QUERIES -----------------------------*/
+/*-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 800px) {
+    html,
+    body {
+        overflow: auto;
+    }
+
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        padding: 1vh 1vw;
+        margin-top: 3rem;
+    }
+
+    /* LEFT PANEL — collapsible */
+    #journal-list {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        max-height: 100vh;
+        transition: max-height 0.5s ease;
+        grid-column: unset;
+        padding-right: 0;
+    }
+
+    #journal-list.collapsed {
+        max-height: 4rem;
+        overflow: hidden;
+    }
+
+    /* Collapsed header shown at top of left panel */
+    #journal-list-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1.2px solid #0e2657;
+        cursor: pointer;
+        font-family: "Diatype Greek", monospace;
+        font-size: 1em;
+        text-transform: uppercase;
+        color: #0e2657;
+        transition: color 2s ease;
+    }
+
+    /* Arrow indicator */
+    #journal-list-header::after {
+        content: "▲";
+        font-size: 0.7em;
+        transition: transform 0.3s ease;
+    }
+
+    #journal-list.collapsed #journal-list-header::after {
+        transform: rotate(180deg);
+    }
+
+    /* RIGHT PANEL */
+    #journal-content {
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        grid-column: unset;
+    }
+
+    /* Disable hover slide on mobile */
+    .journal-entry:hover {
+        margin-left: 0;
+    }
+
+    .nav-item {
+        font-size: 0.8rem;
+    }
+}
