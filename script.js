@@ -19,32 +19,35 @@ updateSky();
 setInterval(updateSky, 60000);
 
 function updateTextColor() {
-    const hour = new Date().getHours();
-    const isNight = (hour >= 0 && hour < 5) || (hour >= 18 && hour < 24);
-    const color = isNight ? '#7d9bd5' : '#0E2657';
+  const hour = new Date().getHours();
+  const isNight = (hour >= 0 && hour < 5) || (hour >= 18 && hour < 24);
+  const color = isNight ? "#7d9bd5" : "#0E2657";
 
-    // Nav items
-    document.querySelectorAll('.nav-item').forEach(el => {
-        el.style.color = color;
-    });
+  // Nav items
+  document.querySelectorAll(".nav-item").forEach((el) => {
+    el.style.color = color;
+  });
 
-    // Nav rule
-    const navRule = document.querySelector('.nav-rule');
-    if (navRule) navRule.style.borderTopColor = color;
+  // Nav rule
+  const navRule = document.querySelector(".nav-rule");
+  if (navRule) navRule.style.borderTopColor = color;
 
-    // Journal entries
-    document.querySelectorAll('.journal-entry').forEach(el => {
-        el.style.color = color;
-        el.style.borderBottomColor = color;
-    });
+  // Journal entries
+  document.querySelectorAll(".journal-entry").forEach((el) => {
+    el.style.color = color;
+    el.style.borderBottomColor = color;
+  });
 
-    // Mobile collapsible header label
-    const journalHeader = document.getElementById('journal-list-header');
-    if (journalHeader) journalHeader.style.color = color;
+  // Mobile collapsible header label
+  const journalHeader = document.getElementById("journal-list-header");
+  if (journalHeader) {
+    journalHeader.style.color = color;
+    journalHeader.style.borderBottomColor = color;
+  }
 
-    // Main content text
-    const journalContent = document.querySelector('#journal-content');
-    if (journalContent) journalContent.style.color = color;
+  // Main content text
+  const journalContent = document.querySelector("#journal-content");
+  if (journalContent) journalContent.style.color = color;
 }
 
 updateTextColor();
