@@ -229,9 +229,10 @@ nav {
     font-family: "Diatype Greek", monospace;
     font-size: 1rem;
     text-transform: uppercase;
-    color: #0e2657;
+    color: inherit;
     transition: color 2s ease;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .nav-rule {
@@ -264,6 +265,7 @@ nav {
     height: calc(100vh - 3rem);
     overflow-y: auto;
     padding-right: 1rem;
+    padding-bottom: 10rem;
 }
 
 #journal-list-header {
