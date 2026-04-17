@@ -165,7 +165,7 @@ function buildJournalList() {
             entryEl = document.createElement("div");
         }
 
-        entryEl.className = "journal-entry" + (isActive ? " active" : "");
+        entryEl.className = "journal-entry" + (isActive ? " active hide-on-mobile-collapsed" : "");
         entryEl.innerHTML = entryHTML;
         list.appendChild(entryEl);
     });

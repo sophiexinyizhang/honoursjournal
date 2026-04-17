@@ -565,6 +565,10 @@ nav {
         transform: rotate(180deg);
     }
 
+    #journal-list.collapsed .hide-on-mobile-collapsed {
+        display: none;
+    }
+
     /* RIGHT PANEL */
     #journal-content {
         width: 100%;
