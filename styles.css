@@ -377,7 +377,6 @@ nav {
     padding: 0.5rem 1rem;
     cursor: default;
     color: #0e2657;
-    /*transition: color 2s ease;*/
 }
 
 .anchor {
@@ -507,74 +506,71 @@ nav {
 /*----------------------- MEDIA QUERIES -----------------------------*/
 /*-------------------------------------------------------------------*/
 
+/* Back bar is mobile-only — hidden on all viewports above 800px */
+#mobile-back-bar {
+    display: none;
+}
+
 @media only screen and (max-width: 800px) {
     html,
     body {
-        overflow: auto;
-    }
-
-    #wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        overflow: visible;
-        padding: 1vh 1vw;
-        margin-top: 3rem;
-    }
-
-    /* LEFT PANEL — collapsible */
-    #journal-list {
-        width: 100%;
-        height: auto;
-        /*overflow: hidden;*/
-        max-height: 100vh;
-        transition: max-height 0.5s ease;
-        grid-column: unset;
-        padding-right: 0;
-    }
-
-    #journal-list.collapsed {
-        max-height: 4rem;
         overflow: hidden;
     }
 
-    /* Collapsed header shown at top of left panel */
-    #journal-list-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 0;
-        border-bottom: 1.2px solid #0e2657;
-        cursor: pointer;
-        font-family: "Diatype Greek", monospace;
-        font-size: 1em;
-        text-transform: uppercase;
-        color: #0e2657;
-        transition: color 2s ease;
+    #wrapper {
+        position: relative;
+        display: block;
+        width: 100vw;
+        height: calc(100vh - 3rem);
+        margin-top: 3rem;
+        padding: 0;
+        overflow: hidden;
     }
 
-    /* Arrow indicator */
-    #journal-list-header::after {
-        content: "▲";
-        font-size: 0.7em;
-        transition: transform 0.3s ease;
-    }
-
-    #journal-list.collapsed #journal-list-header::after {
-        transform: rotate(180deg);
-    }
-
-    #journal-list.collapsed .hide-on-mobile-collapsed {
-        display: none;
-    }
-
-    /* RIGHT PANEL */
-    #journal-content {
-        width: 100%;
-        height: 80vh;
-        overflow-y: visible;
+    /* LEFT PANEL — off-screen left, slides in when drawer opens */
+    #journal-list {
+        position: fixed;
+        top: 3rem;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 3rem);
+        overflow-y: auto;
+        padding: 1vh 1vw 10rem 1vw;
         grid-column: unset;
+        z-index: 10;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    /* Drawer open — list slides in from left */
+    #wrapper.drawer-open #journal-list {
+        transform: translateX(0);
+    }
+
+    /* Index mobile — list always visible */
+    #journal-list.mobile-index-list {
+        transform: translateX(0);
+    }
+
+    /* RIGHT PANEL — full viewport, slides right when drawer opens */
+    #journal-content {
+        position: fixed;
+        top: 3rem;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 3rem);
+        overflow-y: auto;
+        padding: 1vh 1vw;
+        padding-top: 4rem;
+        grid-column: unset;
+        z-index: 5;
+        transform: translateX(0);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    /* Drawer open — content slides out to the right */
+    #wrapper.drawer-open #journal-content {
+        transform: translateX(100vw);
     }
 
     /*STYLING FOR IFRAME INSIDE JOURNAL CONTENT > OVERVIEW MAP*/
@@ -588,9 +584,86 @@ nav {
     /* Disable hover slide on mobile */
     .journal-entry:hover {
         margin-left: 0;
+        font-weight: normal;
+        font-size: 1.05em;
+        color: inherit;
+    }
+
+    /* Active entry on mobile — indent + bold */
+    .journal-entry.active {
+        margin-left: 3rem;
+        font-weight: bold;
+        font-size: 1.05em;
     }
 
     .nav-item {
         font-size: 0.8rem;
+    }
+
+    /*-------------------------------------------------------------------*/
+    /*------------- MOBILE BACK BAR -------------------------------------*/
+    /*-------------------------------------------------------------------*/
+
+    #mobile-back-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 2vh 1vw 0.6vh 1vw;
+        margin-top: calc(2vh + 1.8rem + 0.75rem);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        overflow: hidden;
+        font-family: "Diatype Greek", monospace;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: #0e2657;
+        transition: color 2s ease, transform 0.4s ease-in-out;
+        background: transparent;
+        z-index: 18;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transform: translateX(0);
+    }
+
+    /* Hide back bar when drawer is open — slides out to the right with content */
+    #mobile-back-bar.drawer-open {
+        transform: translateX(100vw);
+    }
+
+    #mobile-back-bar::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1vw;
+        right: 1vw;
+        border-top: 1.2px solid currentColor;
+        opacity: 0.6;
+    }
+
+    .back-bar-arrow {
+        font-family: "Diatype Greek", monospace;
+        font-size: 1rem;
+        flex-shrink: 0;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .back-bar-icon {
+        width: 12px;
+        opacity: 0.8;
+        flex-shrink: 0;
+    }
+
+    .back-bar-label {
+        font-family: "Diatype Greek", monospace;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
     }
 }
