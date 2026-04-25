@@ -111,13 +111,13 @@ const journalEntries = [
         date: "THU 19/02/26",
         title: "STEAL LIKE AN ARTIST – GAMBERGE",
         type: "project",
-        href: null
+        href: "steallikeanartist.html"
     },
     {
         date: "WED 18/02/26",
         title: "MAKING PUBLIC INFORMATION ACTUALLY ACCESSIBLE TO THE PUBLIC IS THE RESPONSIBILITY OF DESIGNERS",
         type: "anchor",
-        href: "1makingpublicinfo.html"
+        href: "makingpublicinfo.html"
     }
 ];
 

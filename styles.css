@@ -74,10 +74,8 @@ body {
 }
 
 p,
-li,
 td {
     font-size: 1.4em;
-    padding: 0.8rem 0;
     list-style: none;
     font-weight: normal;
 }
@@ -106,7 +104,7 @@ h3 {
 h4 {
     font-family: "Diatype Greek", monospace;
     font-size: 1.4em;
-    padding-top: 3vh;
+    padding-top: 2rem;
     font-weight: bold;
 }
 
@@ -117,6 +115,7 @@ h5 {
 
 p {
     font-size: 1.2em;
+    padding: 0.5rem 0;
 }
 
 .bold {
@@ -126,15 +125,57 @@ p {
     font-style: italic;
 }
 
+.open {
+    padding-top: 0;
+}
+
+.caption {
+    font-family: "Diatype Greek", monospace;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 0 2rem 0;
+}
+
 /* LINK STYLING */
-a:link {
-    font-weight: normal;
+a {
     text-decoration: none;
+    font-weight: inherit;
+    color: inherit;
+    transition:
+        color 1s ease,
+        font-size 0.5s ease;
 }
 
 a:hover {
     font-weight: bold;
-    color: #2d1b69;
+    font-size: 1.05em;
+    color: #1e3a8a;
+}
+
+#content-body .caption a {
+    text-decoration: none;
+}
+
+#content-body .caption a:hover {
+    font-size: 1.05em;
+    text-decoration: underline;
+    color: #1e3a8a;
+}
+
+/*DOT POINT LIST STYLING*/
+ul {
+    list-style-type: disc;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    font-size: 1.2em;
+}
+
+li::marker {
+    color: inherit;
 }
 
 /*-------------------------------------------------------------------*/
@@ -231,9 +272,16 @@ nav {
     font-size: 1rem;
     text-transform: uppercase;
     color: inherit;
-    transition: color 2s ease;
+    transition:
+        color 2s ease,
+        font-size 0.5s ease;
     white-space: nowrap;
     text-decoration: none;
+}
+
+.nav-item.active {
+    font-weight: bold;
+    font-size: 1.05em;
 }
 
 .nav-rule {
@@ -278,6 +326,44 @@ nav {
     grid-column: span 8;
     height: calc(100vh - 3rem);
     overflow-y: auto;
+    padding-bottom: 10rem;
+}
+
+.content-heading {
+    max-width: 70rem;
+    margin-right: auto;
+}
+
+#content-body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    max-width: 100vw;
+    /*margin-right: 10vw;*/
+    padding: 3.5vh 0 5vh 0;
+}
+
+.content-longbody {
+    grid-column: span 10;
+}
+
+.content-shortbody {
+    grid-column: span 6;
+}
+
+.content-shortimage {
+    grid-column: span 5;
+    margin: auto;
+    padding-left: 5rem;
+}
+
+.content-shortimage img {
+    max-width: 100%;
+}
+
+#content-body a {
+    text-decoration: underline;
+    color: inherit;
 }
 
 /*STYLING FOR IFRAME INSIDE JOURNAL CONTENT > OVERVIEW MAP*/
@@ -387,16 +473,6 @@ nav {
 .project {
     background-color: #c0d2f5;
     opacity: 0.8;
-}
-
-.content-heading {
-    max-width: 70rem;
-    margin-right: auto;
-}
-
-.content-body {
-    margin-right: 10vw;
-    padding: 3.5vh 0 5vh 0;
 }
 
 /*-------------------------------------------------------------------*/
@@ -523,7 +599,7 @@ nav {
     body {
         overflow: hidden;
     }
-    
+
     nav {
         margin-left: 4vw;
         margin-right: 4vw;
@@ -585,17 +661,17 @@ nav {
     #wrapper.drawer-open #journal-content {
         transform: translateX(100vw);
     }
-    
+
     #journal-content h1 {
         font-size: 3.2em;
         /*line-height: 3.7rem;*/
     }
-    
+
     #journal-content h2 {
         font-size: 1.8em;
         padding-top: 2vh;
     }
-    
+
     #journal-content h4 {
         font-size: 1.2em;
     }
@@ -607,14 +683,13 @@ nav {
         border: none;
         display: block;
     }
-    
 
     /* Disable hover slide on mobile */
     .journal-entry:hover {
         margin-left: 0;
         font-weight: normal;
         font-size: 1.05em;
-        color: inherit;
+        color: #1e3a8a;
     }
 
     /* Active entry on mobile — indent + bold */
@@ -647,7 +722,9 @@ nav {
         font-size: 1rem;
         text-transform: uppercase;
         color: #0e2657;
-        transition: color 2s ease, transform 0.4s ease-in-out;
+        transition:
+            color 2s ease,
+            transform 0.4s ease-in-out;
         background: transparent;
         z-index: 18;
         cursor: pointer;

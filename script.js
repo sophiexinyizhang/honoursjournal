@@ -3,8 +3,8 @@
 ───────────────────────────────────────────── */
 
 function getSkyClass(hour) {
-  if (hour >= 0 && hour < 5)  return "night";
-  if (hour >= 5 && hour < 7)  return "dawn";
+  if (hour >= 0 && hour < 5) return "night";
+  if (hour >= 5 && hour < 7) return "dawn";
   if (hour >= 7 && hour < 10) return "morning";
   if (hour >= 10 && hour < 14) return "midday";
   if (hour >= 14 && hour < 17) return "afternoon";
@@ -26,9 +26,12 @@ function updateTextColor() {
   const hour = new Date().getHours();
   const isNight = (hour >= 0 && hour < 5) || (hour >= 18 && hour < 24);
   const color = isNight ? "#7d9bd5" : "#0E2657";
+  const hoverColor = isNight ? "#a8c0e8" : "#1e3a8a";
 
   document.querySelectorAll(".nav-item").forEach((el) => {
     el.style.color = color;
+    el.addEventListener("mouseenter", () => (el.style.color = hoverColor));
+    el.addEventListener("mouseleave", () => (el.style.color = color));
   });
 
   const navRule = document.querySelector(".nav-rule");
@@ -37,6 +40,8 @@ function updateTextColor() {
   document.querySelectorAll(".journal-entry").forEach((el) => {
     el.style.color = color;
     el.style.borderBottomColor = color;
+    el.addEventListener("mouseenter", () => (el.style.color = hoverColor));
+    el.addEventListener("mouseleave", () => (el.style.color = color));
   });
 
   const journalHeader = document.getElementById("journal-list-header");
@@ -48,13 +53,17 @@ function updateTextColor() {
   const journalContent = document.querySelector("#journal-content");
   if (journalContent) journalContent.style.color = color;
 
+  document.querySelectorAll("#journal-content a").forEach((el) => {
+    el.addEventListener("mouseenter", () => (el.style.color = hoverColor));
+    el.addEventListener("mouseleave", () => (el.style.color = ""));
+  });
+
   const backBar = document.getElementById("mobile-back-bar");
   if (backBar) backBar.style.color = color;
 }
 
 updateTextColor();
 setInterval(updateTextColor, 60000);
-
 
 /* ─────────────────────────────────────────────
    LEGACY DESKTOP HELPERS (journal.js calls these)
@@ -72,7 +81,6 @@ function setActiveEntry(title, date) {
   if (list) list.classList.add("collapsed");
 }
 
-
 /* ─────────────────────────────────────────────
    MOBILE DETECTION + PAGE TYPE
 ───────────────────────────────────────────── */
@@ -86,7 +94,6 @@ function getPageType() {
   if (!page || page === "" || page === "index.html") return "index";
   return "entry";
 }
-
 
 /* ─────────────────────────────────────────────
    MOBILE DRAWER — open / close
@@ -120,7 +127,6 @@ function toggleDrawer() {
   }
 }
 
-
 /* ─────────────────────────────────────────────
    MOBILE BACK BAR
 ───────────────────────────────────────────── */
@@ -140,7 +146,7 @@ function createMobileBackBar() {
   const iconAlt = isAnchor ? "Contextual Anchor" : "Project";
 
   const currentPage = window.location.pathname.split("/").pop();
-  const activeEntry = (typeof journalEntries !== "undefined") ? journalEntries.find((e) => e.href === currentPage) : null;
+  const activeEntry = typeof journalEntries !== "undefined" ? journalEntries.find((e) => e.href === currentPage) : null;
   const labelText = activeEntry ? activeEntry.title : "";
 
   const bar = document.createElement("div");
@@ -168,7 +174,6 @@ function createMobileBackBar() {
 
   updateTextColor();
 }
-
 
 /* ─────────────────────────────────────────────
    MOBILE INIT
