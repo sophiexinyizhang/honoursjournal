@@ -85,7 +85,7 @@ td {
 h1 {
     font-family: "Sohn", Arial, Helvetica, sans-serif;
     font-size: 4em;
-    line-height: 5rem;
+    /*line-height: 5rem;*/
     padding: 0.5vw 0;
     text-align: left;
 }
@@ -107,6 +107,7 @@ h4 {
     font-family: "Diatype Greek", monospace;
     font-size: 1.4em;
     padding-top: 3vh;
+    font-weight: bold;
 }
 
 h5 {
@@ -509,12 +510,23 @@ nav {
 /* Back bar is mobile-only — hidden on all viewports above 800px */
 #mobile-back-bar {
     display: none;
+    /*blurs the background of the mobile back bar, frosted glass effect*/
+    /*
+    background: rgba(255, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    */
 }
 
 @media only screen and (max-width: 800px) {
     html,
     body {
         overflow: hidden;
+    }
+    
+    nav {
+        margin-left: 4vw;
+        margin-right: 4vw;
     }
 
     #wrapper {
@@ -523,6 +535,7 @@ nav {
         width: 100vw;
         height: calc(100vh - 3rem);
         margin-top: 3rem;
+        /*margin-bottom: 100rem;*/
         padding: 0;
         overflow: hidden;
     }
@@ -560,8 +573,8 @@ nav {
         width: 100vw;
         height: calc(100vh - 3rem);
         overflow-y: auto;
-        padding: 1vh 1vw;
-        padding-top: 4rem;
+        /*padding: top right bottom left*/
+        padding: 4rem 5vw 10rem 5vw;
         grid-column: unset;
         z-index: 5;
         transform: translateX(0);
@@ -572,6 +585,20 @@ nav {
     #wrapper.drawer-open #journal-content {
         transform: translateX(100vw);
     }
+    
+    #journal-content h1 {
+        font-size: 3.2em;
+        /*line-height: 3.7rem;*/
+    }
+    
+    #journal-content h2 {
+        font-size: 1.8em;
+        padding-top: 2vh;
+    }
+    
+    #journal-content h4 {
+        font-size: 1.2em;
+    }
 
     /*STYLING FOR IFRAME INSIDE JOURNAL CONTENT > OVERVIEW MAP*/
     #journal-content iframe {
@@ -580,6 +607,7 @@ nav {
         border: none;
         display: block;
     }
+    
 
     /* Disable hover slide on mobile */
     .journal-entry:hover {
@@ -609,8 +637,8 @@ nav {
         top: 0;
         left: 0;
         right: 0;
-        padding: 2vh 1vw 0.6vh 1vw;
-        margin-top: calc(2vh + 1.8rem + 0.75rem);
+        padding: 1vh 1vw 0.6vh 1vw;
+        margin-top: calc(1vh + 1.8rem + 0.75rem);
         display: flex;
         align-items: center;
         gap: 0.6rem;
