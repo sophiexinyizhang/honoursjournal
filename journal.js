@@ -135,9 +135,9 @@ function buildJournalList() {
 
     // Find active entry for the mobile label
     const activeEntry = journalEntries.find((e) => e.href === currentPage);
-    const labelText = activeEntry
-        ? activeEntry.date + " — " + activeEntry.title.substring(0, 60) + "..."
-        : "JOURNAL ENTRIES";
+const labelText = activeEntry ?
+    activeEntry.date + " — " + activeEntry.title.substring(0, 60) + "..." :
+    "JOURNAL ENTRIES";
 
     header.innerHTML = `<span id="journal-list-label">${labelText}</span>`;
     list.appendChild(header);
@@ -145,10 +145,9 @@ function buildJournalList() {
     // Build each journal entry
     journalEntries.forEach((entry) => {
         const isActive = entry.href === currentPage;
-        const icon =
-            entry.type === "anchor"
-                ? '<img class="icon-sun" src="img/sun-icon.svg" alt="Contextual Anchor" />'
-                : '<img class="icon-star" src="img/star-icon.svg" alt="Project" />';
+const icon = entry.type === "anchor" ?
+    '<img class="icon-sun" src="img/sun-icon.svg" alt="Contextual Anchor" />' :
+    '<img class="icon-star" src="img/star-icon.svg" alt="Project" />';
 
         const entryHTML = `
             <div class="entry-date">${entry.date}</div>
