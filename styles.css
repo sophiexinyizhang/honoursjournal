@@ -1,5 +1,4 @@
 /*import fonts Sohn & ABC Diatype Greek Mono */
-
 @font-face {
     font-family: "Sohn";
     src: url("fonts/test-soehne-buch.woff2") format("woff2");
@@ -9,7 +8,7 @@
 
 @font-face {
     font-family: "Sohn";
-    src: url("fonts/test-soehne-halbfett.woff2") format("woff2");
+    src: url("fonts/test-soehne-kraftig.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
 }
@@ -36,6 +35,7 @@
     padding: 0;
     box-sizing: border-box;
     font-weight: normal;
+    font-style: normal;
 }
 
 /* FIX FOR OLDER BROWSERS */
@@ -95,10 +95,10 @@ h2 {
 }
 
 h3 {
-    font-family: "Diatype Greek", monospace;
+    /*font-family: "Diatype Greek", monospace;*/
     font-size: 1.2em;
-    text-transform: uppercase;
-    padding: 2rem 0;
+    /*text-transform: uppercase;*/
+    padding: 0 0 2rem 0;
 }
 
 h4 {
@@ -125,6 +125,13 @@ p {
     font-style: italic;
 }
 
+.pullout {
+    font-size: 1.5em;
+    font-weight: bold;
+    /*font-family: "Diatype Greek", monospace;*/
+    /*font-style: italic;*/
+}
+
 .open {
     padding-top: 0;
 }
@@ -134,7 +141,7 @@ p {
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 0.5rem 0 2rem 0;
+    padding: 1rem 0 2rem 0;
 }
 
 /* LINK STYLING */
@@ -354,7 +361,8 @@ nav {
 .content-shortimage {
     grid-column: span 5;
     margin: auto;
-    padding-left: 5rem;
+    margin-top: 0;
+    padding-left: 2rem;
 }
 
 .content-shortimage img {
@@ -364,6 +372,26 @@ nav {
 #content-body a {
     text-decoration: underline;
     color: inherit;
+}
+
+.content-video {
+    width: 100%;
+    margin: 2.5vh 0;
+}
+
+.content-video video {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+}
+
+.content-video iframe {
+    max-width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
 }
 
 /*STYLING FOR IFRAME INSIDE JOURNAL CONTENT > OVERVIEW MAP*/
@@ -682,6 +710,10 @@ nav {
         height: 100%;
         border: none;
         display: block;
+    }
+
+    .journal-entry {
+        font-size: 0.9em;
     }
 
     /* Disable hover slide on mobile */

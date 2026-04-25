@@ -75,37 +75,37 @@ const journalEntries = [
         date: "MON 23/03/26",
         title: "A SUBTLE SYNCHRONICITY @3DITIONAL",
         type: "anchor",
-        href: null
+        href: "asubtlesynch.html"
     },
     {
         date: "SAT 21/03/26",
-        title: "TOUCHDESIGNER EXPERIMENT 1",
+        title: "TD PIXELLATE",
         type: "project",
-        href: null
+        href: "tdpixellate.html"
     },
     {
         date: "MON 16/03/26",
         title: "ARE YOU ONE OR TWO?",
         type: "anchor",
-        href: null
+        href: "areyouoneortwo.html"
     },
     {
         date: "TUE 10/03/26",
-        title: "DARREN RAVEN'S LECTURE ZINES",
+        title: "DARREN RAVEN",
         type: "anchor",
-        href: null
+        href: "darrenraven.html"
     },
     {
         date: "MON 09/03/26",
         title: "THE HORSE IN STUDIO 5A",
         type: "project",
-        href: null
+        href: "horsein5a.html"
     },
     {
         date: "MON 23/02/26",
         title: "ARE MEMBERSHIP MODELS THE FUTURE OF INDEPENDENT MEDIA?",
         type: "anchor",
-        href: null
+        href: "futureindependentmedia.html"
     },
     {
         date: "THU 19/02/26",
