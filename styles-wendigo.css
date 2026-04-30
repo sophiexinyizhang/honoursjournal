@@ -1,0 +1,1487 @@
+/*import fonts ABC Arizona*/
+
+@font-face {
+    font-family: "ABC Arizona";
+    src: url("fonts/ABCArizonaText-Light-Trial.woff2") format("woff2"),
+        url("fonts/ABCArizonaText-Light-Trial.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ABC Arizona";
+    src: url("fonts/ABCArizonaText-Medium-Trial.woff2") format("woff2"),
+        url("fonts/ABCArizonaText-Medium-Trial.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ABC Arizona";
+    src: url("fonts/ABCArizonaText-MediumItalic-Trial.woff2") format("woff2"),
+        url("fonts/ABCArizonaText-MediumItalic-Trial.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*global reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+/*fix up for older browsers to draw the new semantic elements*/
+
+header,
+nav,
+main,
+aside,
+article,
+section,
+footer,
+figure,
+figcaption {
+    display: block;
+}
+
+/*all images to shrink if necessary to fit*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*basic text styling*/
+
+html {
+    background-color: #141414;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-family: "ABC Arizona", Times New Roman, serif;
+    /*smooth scroll behaviour*/
+    scroll-behavior: smooth;
+}
+
+p,
+li,
+td {
+    font-size: 1.4rem;
+    padding: 0.8rem 0;
+    list-style: none;
+    font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    padding: 2.4rem 0 0 0;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+/*big title*/
+h1 {
+    font-size: 3.5208em;
+    padding: 3vw 0;
+}
+
+/*main section title*/
+h2 {
+    font-size: 2.33em;
+    padding: 15vw 0 5vw 0;
+}
+
+/*subheading, used for navigation buttons*/
+h3 {
+    /*    background-color: lime;*/
+    color: #D0252A;
+    font-size: 1.5417rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+}
+
+/*subheading 2 text, used on credits page*/
+h4 {
+    font-size: 1.5417rem;
+}
+
+/*body text*/
+p {
+    font-size: 1.33em;
+}
+
+blockquote {
+    /* top right bottom left */
+    margin: 6.4rem 0;
+    margin-bottom: 3rem;
+}
+
+blockquote p {
+    font-size: 1.7708em;
+    padding-bottom: 1.5rem;
+}
+
+/*hover interaction for passage text*/
+#two-passage p {
+    color: white;
+    transition-property: all;
+    transition-duration: 1.2s;
+}
+
+#two-passage p:hover {
+    color: #D0252A;
+    font-size: 1.9em;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+
+/*target blockquote in this specific div*/
+#four-bodytext blockquote {
+    margin: 0;
+    padding: 4rem 0;
+}
+
+.caption p {
+    text-align: right;
+    font-size: 1.0208em;
+    text-transform: uppercase;
+}
+
+footnote {
+    font-size: 0.8958em;
+    text-transform: lowercase;
+}
+
+footnote li {
+    text-align: left;
+    text-transform: none;
+    padding-left: 5vw;
+}
+
+.indent {
+    padding-left: 5vw;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/*styling for red text that grows on hover*/
+.red {
+    color: #D0252A;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.red:hover {
+    color: #63E3DF;
+    font-size: 4rem;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+/*on hover, text shakes*/
+#face-images p:hover,
+h3:hover {
+    -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    /*slow down animation slightly*/
+    animation-duration: 1.2s;
+}
+
+/*unordered list styling for pyschosis passage etymology*/
+#one-psycho li {
+    line-height: 0.3;
+    font-size: 1.77em;
+    color: #D0252A;
+    text-transform: lowercase;
+    transition-property: all;
+    transition-duration: 5s;
+}
+
+#one-psycho li:hover {
+    color: #63E3DF;
+    font-size: 7.0417em;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+
+/*---------------------------------------------------------*/
+/*---------------------- IMAGE STYLING --------------------*/
+/*---------------------------------------------------------*/
+/*div styling for image grid of pop culture manifestations*/
+#face-images {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+
+/*div styling for individual images*/
+#face-images img {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    transition-property: all;
+    transition-duration: 2s;
+    /*add drop shadow*/
+    /*horizonal offset / vertical offset / blur radius / colour*/
+    box-shadow: 10px 10px 40px #000000;
+}
+
+/*styling for landscape imgs to take up 2 columns of the grid, instead of 1*/
+.landscape {
+    grid-column: 3 / 5;
+}
+
+/*style pop culture imgs to rotate & transform - simulate scattering of crime scene photos*/
+.rotate-left {
+    transform: rotate(-15deg);
+}
+
+.rotate-right {
+    transform: rotate(15deg);
+}
+
+.large-1 {
+    transform: scale(1.2);
+}
+
+.large-2 {
+    transform: scale(1.6);
+}
+
+.small {
+    transform: scale(0.6);
+}
+
+/*styling for all rotate/transform properties of img*/
+.rotate-left,
+.rotate-right,
+.large-1,
+.large-2,
+.small,
+.box:hover,
+.textBox {
+    transition-property: all;
+    transition-duration: 2s;
+}
+
+/*on hover, each image enlarges & rotates*/
+.box:hover {
+    transform: scale(2);
+    z-index: 1;
+    -webkit-animation: vibrate-1 0.5s linear infinite both;
+    animation: vibrate-1 0.5s linear infinite both;
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+}
+
+.textBox {
+    position: absolute;
+    z-index: 20;
+    background-color: #141414;
+    width: 100%;
+    height: 100%;
+    padding: 2vw;
+    /*hide by default and show on hover*/
+    opacity: 0;
+}
+
+.box:hover .textBox {
+    opacity: 1;
+
+}
+
+.textBox p {
+    font-size: 1.1em;
+}
+
+.textBox footnote {
+    color: #D0252A;
+    text-transform: none;
+}
+
+/*link styling*/
+a:link {
+    color: #D0252A;
+    text-decoration: none;
+}
+
+/*default styling - same colour as default unclicked link*/
+a:visited {
+    color: #D0252A;
+}
+
+a:hover {
+    color: #63E3DF;
+}
+
+/*special link visited text styling for credits page*/
+#credits-text a:visited {
+    color: #63E3DF;
+}
+
+/*-------------------------------------------------------------------*/
+/*------------------------ NAV BAR STYLING --------------------------*/
+/*-------------------------------------------------------------------*/
+
+/*nav bar icon styling: centre top of page in fixed position*/
+#hamburgernav {
+    display: block;
+    width: 100vw;
+    height: 10vw;
+    max-height: 10rem;
+    z-index: 20;
+    /*            background-color: lime;*/
+}
+
+.hamburger {
+    position: fixed;
+    cursor: pointer;
+}
+
+/*default menu icon*/
+.menuIcon {
+    background-image: url(img/navbar.png);
+    /*menu icon slide transitions to new position when window size is changed*/
+    transition-duration: 2s;
+    transition-property: all;
+}
+
+/*close menu icon*/
+.closeIcon {
+    background-image: url(img/navbar-close.png);
+}
+
+/*hover menu icon*/
+/*
+.menuIcon:hover {
+    background-image: url(img/navbar-lines.png);
+}
+*/
+
+/*all nav bar icons share same styling*/
+.menuIcon,
+.closeIcon,
+.hoverIcon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    top: 3rem;
+}
+
+/*hide nav bar icon*/
+#hidehamburger {
+    display: none;
+}
+
+/*nav bar icon image*/
+/*
+#hamburgernav img {
+    width: 20vw;
+    max-width: 10rem;
+    height: auto;
+}
+*/
+
+/*fixed nav bar at top of page, hidden by default*/
+nav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 15rem 10rem;
+    text-align: center;
+    background-color: rgba(34, 22, 22, 0.75);
+    z-index: 19;
+}
+
+#easynav ul {
+    display: block;
+    list-style: none;
+    line-height: 0.3;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*-------------------------------------------------------------------*/
+/*----------------------- LAYOUT STYLING ----------------------------*/
+/*-------------------------------------------------------------------*/
+
+/*overall div styling for vid & text overlay*/
+#vid-container {
+    /*create grid spanning viewport width & height at 1 row/column making it full height*/
+    display: grid;
+    grid-template-rows: 100vh;
+    /*    overflow: hidden;*/
+}
+
+/*video background styling*/
+.video-bg {
+    /*grid area values are row-start / column-start / row-end / column-end*/
+    /*grid-area: 1 / 1 / -1 / -1*/
+    /*negative value means count position from end edge back*/
+    grid-area: 1 / 1 / 2 / 2;
+    /*resize video to cover full screen while mainting aspect ratio*/
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    /*display video bg behind overlay; z-index is front to back stacking order*/
+    z-index: -1;
+    opacity: 0.1;
+    position: fixed;
+}
+
+/*div styling for element overlay on top of the video*/
+.video-overlay {
+    grid-area: 1 / 1 / 2 / 2;
+    display: grid;
+    /*center content*/
+    justify-content: center;
+}
+
+/*hide error message to view on a wider screen by default*/
+#wider-screen {
+    display: none;
+}
+
+/*prologue intro wrapper*/
+#prologue {
+    width: 100vw;
+    /*clamp sets min width, ideal width & max width*/
+    width: clamp(40rem, 100vw, 140rem);
+    margin: auto;
+    /*top right bottom left*/
+    padding: 50vh 30vw 0 10vw;
+    /*grid structure: 2 equal columns & auto rows*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    /*align text to left & bottom of container*/
+    text-align: left;
+}
+
+#wrapper {
+    display: inline-grid;
+    width: 100vw;
+    width: clamp(40rem, 100vw, 140rem);
+    margin: auto;
+    padding: 10vh 8vw;
+    align-content: center;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+}
+
+header {
+    width: 100vw;
+    padding: 2rem 5rem;
+    text-align: right;
+}
+
+main {}
+
+/*-----------------------------------------------------------*/
+/*------------ STYLING FOR MAIN PAGE SECTIONS ---------------*/
+/*-----------------------------------------------------------*/
+
+/*section 1 heading*/
+#one-profile {
+    grid-column: 1/9;
+    grid-row: 1/2;
+}
+
+#one-psycho {
+    /*    background-color: #63E3DF;*/
+    grid-column: 2/3;
+    grid-row: 2/5;
+    padding: 2rem 0;
+}
+
+#one-description1 {
+    /*    background-color: lime;*/
+    grid-column: 4/6;
+    grid-row: 3/5;
+    padding-bottom: 10vh;
+}
+
+#one-description2 {
+    grid-column: 5/8;
+    grid-row: 5/6;
+}
+
+#one-description3 {
+    grid-column: 6/9;
+    grid-row: 6/7;
+    padding: 8rem 0 10rem 0;
+}
+
+/*section 2 heading*/
+#two-psycho {
+    grid-column: 1/9;
+    grid-row: 7/8;
+}
+
+#two-intro {
+    grid-column: 2/6;
+    grid-row: 8/9;
+}
+
+#two-passage {
+    grid-column: 3/7;
+    grid-row: 9/10;
+}
+
+#two-passage-caption {
+    grid-column: 3/7;
+    grid-row: 10/11;
+}
+
+/*section 3 heading*/
+#three-popcult {
+    grid-column: 1/9;
+    grid-row: 11/12;
+}
+
+#three-images {
+    grid-column: 1/9;
+    grid-row: 12/13;
+}
+
+/*section 4 heading*/
+#four-concept {
+    grid-column: 1/9;
+    grid-row: 13/14;
+}
+
+#four-bodytext {
+    grid-column: 4/8;
+    grid-row: 14/15;
+}
+
+#four-conclusion {
+    grid-column: 1/5;
+    grid-row: 15/16;
+}
+
+#go-to-credits {
+    grid-column: 1/9;
+    grid-row: 16/17;
+    padding: 10vw;
+    text-align: right;
+}
+
+/*-----------------------------------------------------------*/
+/*---------------- STYLING FOR CREDITS PAGE -----------------*/
+/*-----------------------------------------------------------*/
+
+#credits {
+    width: 100vw;
+    width: clamp(40rem, 100vw, 140rem);
+    margin: auto;
+    /*grid structure: 2 equal columns & auto rows*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+/*start again text in top right corner of screen*/
+#go-to-start {
+    position: fixed;
+    grid-column: 1/9;
+    grid-row: 1/2;
+    padding: 2rem 5rem;
+    right: 0;
+}
+
+/*styling for main credits text block*/
+#credits-text {
+    /*top right bottom left*/
+    padding: 50vh 30vw 10vw 10vw;
+    grid-column: 1/3;
+}
+
+
+/*-----------------------------------------------------------*/
+/*------------------------ ANIMATIONS -----------------------*/
+/*-----------------------------------------------------------*/
+
+.cold {}
+
+.distance {
+    left: 50vw;
+    top: 40vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.trees {
+    left: 80vw;
+    width: 5rem
+}
+
+.bushes {
+    left: 80vw;
+    top: 80vh;
+}
+
+.cold,
+.distance,
+.trees,
+.bushes {
+    position: fixed;
+    color: #D0252A;
+    text-transform: lowercase;
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.cold:hover,
+.distance:hover,
+.trees:hover,
+.bushes:hover {
+    font-size: 3vw;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+
+.puff-out-center {
+    -webkit-animation: puff-out-center 3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+    animation: puff-out-center 3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+}
+
+/* ----------------------------------------------
+ * Sourced from CSS-Tricks 2024-12-18
+ * Author: Geoff Graham on Jul 21, 2022
+ * css-tricks.com/snippets/css/typewriter-effect
+ * ---------------------------------------------- */
+
+/*TYPEWRITER EFFECT*/
+.line1 {
+    top: 50%;
+    margin: 0 0;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    /*    transform: translateY(-50%);*/
+}
+
+.anim-typewriter {
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+        blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        /*change this to adjust where it stops typing*/
+        width: 56.6em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+/*ANIMISTA CSS ANIMATIONS*/
+/*used in nav bar block text*/
+.focus-in-expand {
+    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.focus-in-reverse {
+    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
+.vibrate {
+    -webkit-animation: vibrate-1 0.9s linear infinite both;
+    animation: vibrate-1 0.9s linear infinite both;
+}
+
+.vibrate-fast {
+    -webkit-animation: vibrate-3 0.5s linear infinite both;
+    animation: vibrate-3 0.5s linear infinite both;
+}
+
+.text-focus-in {
+    -webkit-animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 5s both;
+    animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 5s both;
+}
+
+.text-focus-in-faster {
+    -webkit-animation: text-focus-in 1.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 1.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.blink {
+    -webkit-animation: blink-1 1.2s ease-out infinite both;
+    animation: blink-1 1.2s ease-out infinite both;
+}
+
+.flicker {
+    -webkit-animation: flicker-3 2.5s linear infinite both;
+    animation: flicker-3 2.5s linear infinite both;
+}
+
+.shake-horizontal {
+    -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-12-18 14:52:25
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation focus-in-expand
+ * ----------------------------------------
+ */
+@-webkit-keyframes focus-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes focus-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+@-webkit-keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation vibrate-3
+ * ----------------------------------------
+ */
+@-webkit-keyframes vibrate-3 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    10% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    20% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    30% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    70% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    90% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate-3 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    10% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    20% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    30% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    70% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    90% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation blink-1
+ * ----------------------------------------
+ */
+@-webkit-keyframes blink-1 {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink-1 {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation puff-out-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+}
+
+@keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation flicker-3
+ * ----------------------------------------
+ */
+@-webkit-keyframes flicker-3 {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    32.98% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    34% {
+        opacity: 0;
+    }
+
+    34.02% {
+        opacity: 1;
+    }
+
+    34.98% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    35.9% {
+        opacity: 0;
+    }
+
+    35.92% {
+        opacity: 1;
+    }
+
+    38.98% {
+        opacity: 1;
+    }
+
+    39% {
+        opacity: 0;
+    }
+
+    39.8% {
+        opacity: 0;
+    }
+
+    39.82% {
+        opacity: 1;
+    }
+
+    83.98% {
+        opacity: 1;
+    }
+
+    84% {
+        opacity: 0;
+    }
+
+    84.9% {
+        opacity: 0;
+    }
+
+    84.92% {
+        opacity: 1;
+    }
+}
+
+@keyframes flicker-3 {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    32.98% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    34% {
+        opacity: 0;
+    }
+
+    34.02% {
+        opacity: 1;
+    }
+
+    34.98% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    35.9% {
+        opacity: 0;
+    }
+
+    35.92% {
+        opacity: 1;
+    }
+
+    38.98% {
+        opacity: 1;
+    }
+
+    39% {
+        opacity: 0;
+    }
+
+    39.8% {
+        opacity: 0;
+    }
+
+    39.82% {
+        opacity: 1;
+    }
+
+    83.98% {
+        opacity: 1;
+    }
+
+    84% {
+        opacity: 0;
+    }
+
+    84.9% {
+        opacity: 0;
+    }
+
+    84.92% {
+        opacity: 1;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation shake-horizontal
+ * ----------------------------------------
+ */
+@-webkit-keyframes shake-horizontal {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+    80% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+    }
+
+    90% {
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
+    }
+}
+
+@keyframes shake-horizontal {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+    80% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+    }
+
+    90% {
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
+    }
+}
+
+
+/*-----------------------------------------------------------*/
+/*------------- MEDIA QUERY FOR SMALLER SCREENS -------------*/
+/*error message popup for index page as the typing animation requires a large screen to work properly*/
+
+@media only screen and (max-width: 1185px) {
+
+    #prologue,
+    header,
+    #experiment {
+        display: none;
+    }
+
+    #wider-screen {
+        background-color: rgba(128, 37, 40, 0.43);
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        margin: auto;
+        text-align: center;
+        align-content: center;
+        padding: 0 10vw;
+    }
+}
+
+/*-----------------------------------------------------------*/
+/*-------------- screens smaller than 800px -----------------*/
+
+@media only screen and (max-width:800px) {
+
+    #hamburgernav {
+        /*        background-color: red;*/
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .hamburger {
+        margin: 0 40vw;
+    }
+
+    #wrapper {
+        /*testing bg colour*/
+        /* background-color: firebrick;*/
+        display: grid;
+        width: 100%;
+        margin: auto;
+        padding: 10vh 8vw;
+        align-content: center;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: auto;
+    }
+
+    /*section 1 heading*/
+    #one-profile {
+        grid-column: 1/9;
+        grid-row: 1/2;
+    }
+
+    #one-psycho {
+        grid-column: 2/3;
+        grid-row: 2/5;
+    }
+
+    #one-description1 {
+        grid-column: 4/9;
+        grid-row: 4/5;
+    }
+
+    #one-description2 {
+        grid-column: 4/9;
+        grid-row: 5/6;
+    }
+
+    #one-description3 {
+        grid-column: 4/9;
+        grid-row: 6/7;
+    }
+
+    /*section 2 heading*/
+    #two-psycho {
+        grid-column: 1/9;
+        grid-row: 7/8;
+    }
+
+    #two-intro {
+        grid-column: 2/9;
+        grid-row: 8/9;
+    }
+
+    #two-passage {
+        grid-column: 1/9;
+        grid-row: 9/10;
+        padding: 0 10vw;
+    }
+
+    #two-passage-caption {
+        grid-column: 2/9;
+        grid-row: 10/11;
+    }
+
+    /*section 3 heading*/
+    #three-popcult {
+        grid-column: 1/9;
+        grid-row: 11/12;
+    }
+
+    #three-images {
+        grid-column: 1/9;
+        grid-row: 12/13;
+        padding: 10vw 0;
+    }
+
+    /*section 4 heading*/
+    #four-concept {
+        grid-column: 1/9;
+        grid-row: 13/14;
+    }
+
+    #four-bodytext {
+        grid-column: 3/9;
+        grid-row: 14/15;
+    }
+
+    #four-conclusion {
+        grid-column: 1/7;
+        grid-row: 15/16;
+    }
+
+    #go-to-credits {
+        grid-column: 1/9;
+        grid-row: 16/17;
+    }
+
+    /*change image grid to 2 columns to fit smaller screens*/
+    #face-images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .landscape {
+        grid-column: auto;
+    }
+
+    .large-2,
+    .small {
+        transform: scale(1.2);
+    }
+}

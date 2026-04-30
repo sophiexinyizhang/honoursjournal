@@ -57,19 +57,19 @@ const journalEntries = [
         date: "THU 26/03/26",
         title: "SUN & SKY WEB JOURNAL",
         type: "project",
-        href: null
+        href: "sunskyjournal.html"
     },
     {
         date: "TUE 24/03/26",
         title: "IN A CRIT,",
         type: "project",
-        href: null
+        href: "inacrit.html"
     },
     {
         date: "MON 23/03/26",
         title: "MOVING BIRDS",
         type: "project",
-        href: null
+        href: "movingbirds.html"
     },
     {
         date: "MON 23/03/26",

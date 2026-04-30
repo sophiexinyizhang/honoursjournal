@@ -126,8 +126,8 @@ p {
 }
 
 .pullout {
-    font-size: 1.5em;
     font-weight: bold;
+    font-size: 1.5rem;
     /*font-family: "Diatype Greek", monospace;*/
     /*font-style: italic;*/
 }
@@ -303,9 +303,7 @@ nav {
 /*-------------------------------------------------------------------*/
 
 #wrapper {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
+    display: inline-grid;
     width: clamp(40rem, 100vw, 140rem);
     margin: 0 auto;
     padding: 1vh 1vw;
@@ -313,6 +311,8 @@ nav {
     height: calc(100vh - 3rem);
     align-items: start;
     overflow: hidden;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
 }
 
 /* LEFT PANEL */
