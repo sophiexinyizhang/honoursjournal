@@ -1,22 +1,15 @@
 <!doctype html>
 <html lang="en">
-    <!--head is the brain contains all useful bts information-->
     <head>
-        <!--english character set-->
         <meta charset="UTF-8" />
-        <!--description-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sophie Zhang Honours</title>
-        <!--link to css-->
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
         <script src="journal.js" defer></script>
     </head>
-    <!--the body of the page, contains all content that actually shows in the window browser-->
     <body>
-        <!--load in real-timegradient sky background-->
         <div class="sky"></div>
-        <!--open nav bar block-->
         <nav>
             <div class="nav-grid">
                 <span class="nav-item">SOPHIE ZHANG</span>
@@ -25,16 +18,8 @@
             </div>
             <hr class="nav-rule" />
         </nav>
-        <!--OPEN WRAPPER DIV-->
         <div id="wrapper">
-            <!--OPEN ASIDE LEFT PANEL JOURNAL LIST-->
             <aside id="journal-list" class="collapsed"></aside>
-            <!--CLOSE ASIDE LEFT PANEL JOURNAL LIST-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <!--START MAIN JOURNAL CONTENT-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
             <main id="journal-content">
                 <div class="content-heading">
                     <h1>The Horse in Studio 5A</h1>
@@ -43,57 +28,55 @@
                     <button class="content-type project">EXPERIMENT</button>
                 </div>
                 <div id="content-body">
-                    <div class="content-shortbody">
-                        <h4 class="open">AIMS</h4>
-                        <p>Proof of concept/quick test</p>
-                        <h4>PRECEDENTS & CONTEXT</h4>
-                        <p>
-                            Always been a little project idea I've had, I've seen some really cool reels of graffiti
-                            sticker art frame-by-frame animation.
-                        </p>
-                        <h4>PROCESS & METHODS</h4>
-                        <ul>
-                            <li>
-                                Edit & export individual frames of an animation (in this case I used Muybridge's Horse
-                                in Motion) in Photoshop
-                            </li>
-                            <li>Print onto A4 sticker paper</li>
-                            <li>Cut out frames (don't get the order mixed up!!!)</li>
-                            <li>Stick wherever you like!</li>
-                        </ul>
-                        <h4>REFLECTION ON ACTION</h4>
-                        <ul>
-                            <li>
-                                Love Muybridge's Horse in Motion (which I studied in 2nd year) & also tying it to a lot
-                                of cool design work I've seen this year especially around CNY for 2026 Year of the Horse
-                            </li>
-                            <li>Would be nicer if it was higher-res</li>
-                        </ul>
-                        <h4>REFLECTION FOR ACTION</h4>
-                        <ul>
-                            <li>
-                                Concept works!!! Expand outside of Studio 5A, think about more subversive places &
-                                spaces & locations
-                            </li>
-                            <li>Play with typographic animation? Something political, subversive, fun?</li>
-                            <li>Lean more into background of the stickers compositionally</li>
-                        </ul>
-                    </div>
-                    <div class="content-shortimage">
-                        <img src="img/horsein5a.gif" alt="A graffiti sticker stopmotion of a horse galloping through Studio 5A" />
-                        <p class="caption">
-                            The Horse in Studio 5A
-                        </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <img
+                                src="img/horsein5a.gif"
+                                alt="A graffiti sticker stopmotion of a horse galloping through Studio 5A"/>
+                            <p class="caption">The Horse in Studio 5A</p>
+                        </div>
+                        <div class="col-5">
+                            <h4>AIMS</h4>
+                            <p>Proof of concept/quick test</p>
+                            <h4>PRECEDENTS & CONTEXT</h4>
+                            <p>
+                                Always been a little project idea I've had, I've seen some really cool reels of graffiti
+                                sticker art frame-by-frame animation.
+                            </p>
+                            <h4>PROCESS & METHODS</h4>
+                            <ul>
+                                <li>
+                                    Edit & export individual frames of an animation (in this case I used Muybridge's
+                                    Horse in Motion) in Photoshop
+                                </li>
+                                <li>Print onto A4 sticker paper</li>
+                                <li>Cut out frames (don't get the order mixed up!!!)</li>
+                                <li>Stick wherever you like!</li>
+                            </ul>
+                            <h4>REFLECTION ON ACTION</h4>
+                            <ul>
+                                <li>
+                                    Love Muybridge's Horse in Motion (which I studied in 2nd year) & also tying it to a
+                                    lot of cool design work I've seen this year especially around CNY for 2026 Year of
+                                    the Horse
+                                </li>
+                                <li>Would be nicer if it was higher-res</li>
+                            </ul>
+                            <h4>REFLECTION FOR ACTION</h4>
+                            <ul>
+                                <li>
+                                    Concept works!!! Expand outside of Studio 5A, think about more subversive places &
+                                    spaces & locations
+                                </li>
+                                <li>Play with typographic animation? Something political, subversive, fun?</li>
+                                <li>Lean more into background of the stickers compositionally</li>
+                            </ul>
+                        </div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
             </main>
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <!--END MAIN JOURNAL CONTENT-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
         </div>
-        <!--link javascript code file-->
         <script src="script.js"></script>
     </body>
 </html>

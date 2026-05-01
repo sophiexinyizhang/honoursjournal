@@ -53,8 +53,28 @@ figcaption {
 
 /* ALL IMAGES SHRINK TO FIT */
 img {
+    width: auto;
     max-width: 100%;
     height: auto;
+    max-height: 80vh;
+}
+
+.imagegrid {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+}
+
+#content-body img {
+    padding: 2rem 0 0 0;
+}
+
+.imagegrid {
+    padding: 0;
+    gap: 0;
 }
 
 /* BASIC TEXT STYLING */
@@ -128,6 +148,7 @@ p {
 .pullout {
     font-weight: bold;
     font-size: 1.5rem;
+    padding-top: 2rem;
     /*font-family: "Diatype Greek", monospace;*/
     /*font-style: italic;*/
 }
@@ -342,32 +363,32 @@ nav {
 }
 
 #content-body {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    max-width: 100vw;
-    /*margin-right: 10vw;*/
+    width: 100%;
     padding: 3.5vh 0 5vh 0;
 }
 
-.content-longbody {
-    grid-column: span 10;
+/* ── 12-COLUMN GRID ── */
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+    width: 100%;
+    margin-bottom: 0;
 }
 
-.content-shortbody {
-    grid-column: span 6;
-}
-
-.content-shortimage {
-    grid-column: span 5;
-    margin: auto;
-    margin-top: 0;
-    padding-left: 2rem;
-}
-
-.content-shortimage img {
-    max-width: 100%;
-}
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
 
 #content-body a {
     text-decoration: underline;
@@ -376,7 +397,7 @@ nav {
 
 .content-video {
     width: 100%;
-    margin: 2.5vh 0;
+    margin: 1vh 0;
 }
 
 .content-video video {
@@ -398,6 +419,16 @@ nav {
 #journal-content iframe {
     width: 100%;
     height: 100%;
+    border: none;
+    display: block;
+}
+
+/* RESPONSIVE FIGMA EMBED */
+/* For each iframe, set aspect-ratio inline on the tag, e.g: */
+/* style="aspect-ratio: 16 / 9;" or style="aspect-ratio: 4 / 3;" */
+.figma-embed iframe {
+    width: 100%;
+    height: auto;
     border: none;
     display: block;
 }
@@ -729,6 +760,16 @@ nav {
         margin-left: 3rem;
         font-weight: bold;
         font-size: 1.05em;
+    }
+
+    /* Grid columns collapse to full width on mobile */
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        grid-column: span 1;
     }
 
     .nav-item {

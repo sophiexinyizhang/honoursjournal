@@ -1,22 +1,15 @@
 <!doctype html>
 <html lang="en">
-    <!--head is the brain contains all useful bts information-->
     <head>
-        <!--english character set-->
         <meta charset="UTF-8" />
-        <!--description-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sophie Zhang Honours</title>
-        <!--link to css-->
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
         <script src="journal.js" defer></script>
     </head>
-    <!--the body of the page, contains all content that actually shows in the window browser-->
     <body>
-        <!--load in real-timegradient sky background-->
         <div class="sky"></div>
-        <!--open nav bar block-->
         <nav>
             <div class="nav-grid">
                 <span class="nav-item">SOPHIE ZHANG</span>
@@ -25,16 +18,8 @@
             </div>
             <hr class="nav-rule" />
         </nav>
-        <!--OPEN WRAPPER DIV-->
         <div id="wrapper">
-            <!--OPEN ASIDE LEFT PANEL JOURNAL LIST-->
             <aside id="journal-list" class="collapsed"></aside>
-            <!--CLOSE ASIDE LEFT PANEL JOURNAL LIST-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <!--START MAIN JOURNAL CONTENT-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
             <main id="journal-content">
                 <div class="content-heading">
                     <h1>Sun & Sky Web Journal</h1>
@@ -43,37 +28,51 @@
                     <button class="content-type project">EXPERIMENT</button>
                 </div>
                 <div id="content-body">
-                    <div class="content-shortbody">
-                        <h4 class="open">AIMS</h4>
-                        <p>
-                            To take my next graffiti sticker animation project out into the street, and also merge it
-                            with some of my TouchDesigner experimentation.
-                        </p>
-                        <h4>PROCESS</h4>
-                        <ul>
-                            <li>
-                                Repeat same process with making graffiti sticker animations
-                            </li>
-                            <li>Take the final video output into TouchDesigner with the 'Pixellate' tutorial</li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-5">
+                            <h4 class="open">AIMS</h4>
+                            <p>
+                                To confront the critical issue of my productivity, being that I had a huge backlog of
+                                experiments and anchors I hadn't yet written up. Also to take a break from my other
+                                making and jump back into UI design whilst improving my workflow!
+                            </p>
+                            <p>
+                                Especially after Vanessa's Experimental Mapping Workshop, I was struck with a moment of
+                                motivation to work within Figma more.
+                            </p>
+                        </div>
+                        <div class="col-7">
+                            <img
+                                src="img/vanessa-workshop-1.png"
+                                alt="A screenshot of a web workshop outcome about mapping Bigfoot sightings in America."
+                                class="imagegrid" />
+                            <img
+                                src="img/vanessa-workshop-2.png"
+                                class="imagegrid"
+                                alt="A screenshot of a web workshop outcome about mapping Bigfoot sightings in America." />
+                            <p class="caption">
+                                'Elder Brother', an experimental mapping outcome from Vanessa's workshop
+                            </p>
+                        </div>
                     </div>
-                    <div class="content-shortimage">
-                        <div class="content-video">
-                            <video autoplay muted loop playsinline>
-                                <source src="img/movingbirds.mp4" type="video/mp4" />
-                            </video>
-                            <p class="caption">Moving Birds Graffiti Sticker Animation</p>
+                    <div class="row">
+                        <div class="col-5">
+                            <h4 class="open">VERSION 1 – FIGMA PROTOTYPE</h4>
+                        </div>
+                        <div class="col-7">
+                            <div class="figma-embed">
+                                <iframe
+                                    title="Overview Map – Figma Prototype"
+                                    style="aspect-ratio: 4/3;"
+                                    src="https://embed.figma.com/proto/1sui1gebYhu5HDOHsukshD/VC-Hons-Journal?node-id=1-2&page-id=0%3A1&starting-point-node-id=1%3A2&embed-host=share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </main>
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <!--END MAIN JOURNAL CONTENT-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
         </div>
-        <!--link javascript code file-->
         <script src="script.js"></script>
     </body>
 </html>

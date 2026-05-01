@@ -1,22 +1,15 @@
 <!doctype html>
 <html lang="en">
-    <!--head is the brain contains all useful bts information-->
     <head>
-        <!--english character set-->
         <meta charset="UTF-8" />
-        <!--description-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sophie Zhang Honours</title>
-        <!--link to css-->
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
         <script src="journal.js" defer></script>
     </head>
-    <!--the body of the page, contains all content that actually shows in the window browser-->
     <body>
-        <!--load in real-timegradient sky background-->
         <div class="sky"></div>
-        <!--open nav bar block-->
         <nav>
             <div class="nav-grid">
                 <span class="nav-item">SOPHIE ZHANG</span>
@@ -25,16 +18,8 @@
             </div>
             <hr class="nav-rule" />
         </nav>
-        <!--OPEN WRAPPER DIV-->
         <div id="wrapper">
-            <!--OPEN ASIDE LEFT PANEL JOURNAL LIST-->
             <aside id="journal-list" class="collapsed"></aside>
-            <!--CLOSE ASIDE LEFT PANEL JOURNAL LIST-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <!--START MAIN JOURNAL CONTENT-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
             <main id="journal-content">
                 <div class="content-heading">
                     <h1>TouchDesigner Pixellate</h1>
@@ -42,35 +27,30 @@
                 <div class="content-key">
                     <button class="content-type project">EXPERIMENT</button>
                 </div>
-                <div class="content-video">
-                    <video autoplay controls muted loop playsinline>
-                        <source src="img/tdpixellate.mp4" type="video/mp4" />
-                    </video>
-                    <p class="caption">TouchDesigner Experiment 1 – Pixellate</p>
-                </div>
                 <div id="content-body">
-                    <div class="content-shortbody">
-                        <h4 class="open">AIMS</h4>
-                        <p>To jump into the deep end with TouchDesigner.</p>
-                        <h4>PROCESS</h4>
-                        <p>
-                            Following this
-                            <a href="https://youtu.be/jMcEoCaGZi0?si=5OxjZg3SqFYdwieF" target="_blank"
-                                >tutorial by @xtal</a
-                            >
-                            on Pixellate Effect.
-                        </p>
-                        <!--<h4>REFLECTION</h4>-->
+                    <div class="row">
+                        <div class="col-6">
+                            <h4 class="open">AIMS</h4>
+                            <p>To jump into the deep end with TouchDesigner.</p>
+                            <h4>PROCESS</h4>
+                            <p>
+                                Following this
+                                <a href="https://youtu.be/jMcEoCaGZi0?si=5OxjZg3SqFYdwieF" target="_blank">tutorial by @xtal</a>
+                                on Pixellate Effect.
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <div class="content-video">
+                                <video autoplay controls muted loop playsinline>
+                                    <source src="img/tdpixellate.mp4" type="video/mp4" />
+                                </video>
+                                <p class="caption">TouchDesigner Experiment 1 – Pixellate</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <!--END MAIN JOURNAL CONTENT-->
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
         </div>
-        <!--link javascript code file-->
         <script src="script.js"></script>
     </body>
 </html>
